@@ -1,7 +1,8 @@
 class CTestFunctions < Formula
   desc "A simple unit testing framework for C"
-  homepage "https://github.com/TurkeyMcMac/c-test-functions"
-  url "https://github.com/TurkeyMcMac/c-test-functions/archive/83a24faaf43f23094b7891c2806f42250b8fe083.zip"
+  @@download_commit = '83a24faaf43f23094b7891c2806f42250b8fe083'
+  homepage "https://github.com/TurkeyMcMac/c-test-functions/tree/#{@@download_commit}"
+  url "https://github.com/TurkeyMcMac/c-test-functions/archive/#{@@download_commit}.zip"
   version "0.6.15"
   sha256 "a2ce0a4179bdc0c30867aa613b2d564381abf6bd1c41686dc068712eead15527"
 

@@ -1,7 +1,7 @@
 class Ts3d < Formula
   desc "Terminal-based first-person shooter"
-  homepage "https://github.com/TurkeyMcMac/ts3d"
   @@download_commit = "03b380574b56b2a72b4f5380b52c96dddcaa1bf4"
+  homepage "https://github.com/TurkeyMcMac/ts3d/tree/#{@@download_commit}"
   @@download_url = "https://github.com/TurkeyMcMac/ts3d/archive/#{@@download_commit}.zip"
   url @@download_url
   version "1.3.14"
