@@ -5,7 +5,7 @@ class Ts3d < Formula
   @@download_url = "https://github.com/TurkeyMcMac/ts3d/archive/#{@@download_commit}.zip"
   url @@download_url
   version "1.3.14"
-  # ??? sha256 "d31351d5b99e42641ab534a5f56bb0bcf76b3311448a96fd663c442cce1072dd"
+  sha256 "e96ed7acad951c6553a1a925452be13e076897561fdeca19417a13c878384fe7"
 
   depends_on "ncurses"
   depends_on "turkeymcmac/tap/c-test-functions" => :test
