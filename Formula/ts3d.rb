@@ -16,7 +16,6 @@ class Ts3d < Formula
   def install
     exe = bin/"ts3d"
     exe_real = bin/"ts3d-no-root"
-    man_dir = prefix/"man/man6"
     ts3d_root = prefix/"ts3d-root"
     system 'mkdir', '-p', bin, man6, ts3d_root
     system 'make', 'CFLAGS=-O2'
