@@ -1,11 +1,17 @@
 class Ts3d < Formula
   desc "Terminal-based first-person shooter"
   homepage "https://github.com/TurkeyMcMac/ts3d"
-  url "http://github.com/TurkeyMcMac/ts3d/archive/03b380574b56b2a72b4f5380b52c96dddcaa1bf4.zip"
+  @@download_commit = "03b380574b56b2a72b4f5380b52c96dddcaa1bf4"
+  @@download_url = "http://github.com/TurkeyMcMac/ts3d/archive/#{@@download_commit}.zip"
+  url @@download_url
   version "1.3.14"
   sha256 "d31351d5b99e42641ab534a5f56bb0bcf76b3311448a96fd663c442cce1072dd"
 
   depends_on "ncurses"
+  depends_on "turkeymcmac/tap/c-test-functions" => :test
+  depends_on "wget" => :test
+  # Hopefully included by default:
+  # depends_on "zip" => :test
 
   def install
     exe = bin/"ts3d"
@@ -26,8 +32,9 @@ class Ts3d < Formula
     puts "NOTE: Game files are present in #{ts3d_root}"
   end
 
-  def test
-    puts 'TODO'
-    system "false"
+  test do
+    system 'wget', @@download_url
+    system 'unzip', "#{@@download_commit}.zip"
+    system 'make', '-C', "ts3d-#{@@download_commit}", 'run-tests'
   end
 end
