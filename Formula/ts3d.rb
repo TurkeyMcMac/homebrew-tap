@@ -1,9 +1,9 @@
 class Ts3d < Formula
   desc "Terminal-based first-person shooter"
   homepage "https://github.com/TurkeyMcMac/ts3d"
-  url "https://github.com/TurkeyMcMac/ts3d/archive/master.zip"
+  url "http://github.com/TurkeyMcMac/ts3d/archive/03b380574b56b2a72b4f5380b52c96dddcaa1bf4.zip"
   version "1.3.14"
-  sha256 "948371ecd5afa9004409e7866706edee91e82a9ff43c2997617b0705dd7c1836"
+  sha256 "d31351d5b99e42641ab534a5f56bb0bcf76b3311448a96fd663c442cce1072dd"
 
   depends_on "ncurses"
 
