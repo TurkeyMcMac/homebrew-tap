@@ -8,14 +8,13 @@ class Ts3d < Formula
   depends_on "ncurses"
 
   def install
-    exe_dir = "#{prefix}/bin"
-    exe = "#{exe_dir}/ts3d"
-    exe_real = "#{exe_dir}/ts3d-real"
-    man_dir = "#{prefix}/man/man6"
-    ts3d_root = "#{prefix}/ts3d-root"
-    system 'mkdir', '-p', exe_dir, man_dir, ts3d_root
+    exe = bin/"ts3d"
+    exe_real = bin/"ts3d-real"
+    man_dir = prefix/"man/man6"
+    ts3d_root = prefix/"ts3d-root"
+    system 'mkdir', '-p', bin, man6, ts3d_root
     system 'make', 'CFLAGS="-O2"'
-    system 'sh', '-c', '--', 'yes | make install exe=ts3d-real exe-dir="$0" man-dir="$1" TS3D_ROOT="$2"', exe_dir, man_dir, ts3d_root
+    system 'sh', '-c', '--', 'yes | make install exe=ts3d-real exe-dir="$0" man-dir="$1" TS3D_ROOT="$2"', bin, man6, ts3d_root
     File.open(exe, 'w') do |file|
       file.write <<~SH
         #!/bin/bash
