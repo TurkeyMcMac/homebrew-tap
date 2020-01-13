@@ -8,7 +8,7 @@ class Intergrid < Formula
   depends_on "sdl2"
 
   def install
-    system 'make', 'CXXFLAGS="-O3 -flto"'
+    system 'make', 'CXXFLAGS=-O3 -flto'
     bin.install 'intergrid'
   end
 end
