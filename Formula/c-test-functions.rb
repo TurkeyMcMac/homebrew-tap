@@ -10,4 +10,37 @@ class CTestFunctions < Formula
     bin.install 'ceeteef'
     include.install 'lib/libctf.h'
   end
+
+  test do
+    test = Pathname.new("test")
+    test_c = Pathname.new("test.c")
+    test_c.write <<~C
+      #include <assert.h>
+      #include <libctf.h>
+      #include <stdio.h>
+      CTF_TEST(succeed,
+      )
+      CTF_TEST(succeed_return_0,
+        return 0;
+      )
+      CTF_TEST(fail_assert,
+        assert(1 != 1);
+      )
+      CTF_TEST(fail_return_1,
+        return 1;
+      )
+      CTF_TEST(print,
+        puts("stdout");
+        fputs("stderr\\n", stderr);
+      )
+    C
+    system ENV.cc, '-std=c99', '-shared', '-DCTF_TESTS_ENABLED', '-o', test, test_c
+    output = `ceeteef #{test}`
+    assert output.include? 'succeed SUCCEEDED'
+    assert output.include? 'succeed_return_0 SUCCEEDED'
+    assert output.include? 'fail_assert FAILED'
+    assert output.include? 'fail_return_1 FAILED'
+    assert output.include? 'print:stdout'
+    assert output.include? 'print:stderr'
+  end
 end
