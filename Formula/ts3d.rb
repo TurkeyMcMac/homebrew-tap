@@ -15,12 +15,12 @@ class Ts3d < Formula
 
   def install
     exe = bin/"ts3d"
-    exe_real = bin/"ts3d-real"
+    exe_real = bin/"ts3d-no-root"
     man_dir = prefix/"man/man6"
     ts3d_root = prefix/"ts3d-root"
     system 'mkdir', '-p', bin, man6, ts3d_root
     system 'make', 'CFLAGS=-O2'
-    system 'sh', '-c', '--', 'yes | make install exe=ts3d-real exe-dir="$0" man-dir="$1" TS3D_ROOT="$2"', bin, man6, ts3d_root
+    system 'sh', '-c', '--', 'yes | make install exe=ts3d-no-root exe-dir="$0" man-dir="$1" TS3D_ROOT="$2"', bin, man6, ts3d_root
     exe.write <<~SH
       #!/bin/bash
       [ -z "${TS3D_ROOT+x}" ] && export TS3D_ROOT="#{ts3d_root}"
