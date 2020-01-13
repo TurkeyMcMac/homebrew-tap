@@ -24,7 +24,7 @@ class Ts3d < Formula
     exe.write <<~SH
       #!/bin/bash
       [ -z "${TS3D_ROOT+x}" ] && export TS3D_ROOT="#{ts3d_root}"
-      exec -a "$0" #{exe_real} "$@"
+      exec -a "$(basename "$0")" #{exe_real} "$@"
     SH
     system 'chmod', '+x', exe
     puts "NOTE: Game files are present in #{ts3d_root}"
