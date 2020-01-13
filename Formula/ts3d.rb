@@ -21,13 +21,11 @@ class Ts3d < Formula
     system 'mkdir', '-p', bin, man6, ts3d_root
     system 'make', 'CFLAGS="-O2"'
     system 'sh', '-c', '--', 'yes | make install exe=ts3d-real exe-dir="$0" man-dir="$1" TS3D_ROOT="$2"', bin, man6, ts3d_root
-    File.open(exe, 'w') do |file|
-      file.write <<~SH
-        #!/bin/bash
-        [ -z "${TS3D_ROOT+x}" ] && export TS3D_ROOT="#{ts3d_root}"
-        exec #{exe_real} "$@"
-      SH
-    end
+    exe.write <<~SH
+      #!/bin/bash
+      [ -z "${TS3D_ROOT+x}" ] && export TS3D_ROOT="#{ts3d_root}"
+      exec #{exe_real} "$@"
+    SH
     system 'chmod', '+x', exe
     puts "NOTE: Game files are present in #{ts3d_root}"
   end
