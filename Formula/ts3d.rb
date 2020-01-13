@@ -1,10 +1,10 @@
 class Ts3d < Formula
   desc "Terminal-based first-person shooter"
+  version "1.3.14"
   @@download_commit = "d748de7befacedcd6d094839303310ffd34a8bb3"
   homepage "https://github.com/TurkeyMcMac/ts3d/tree/#{@@download_commit}"
   @@download_url = "https://github.com/TurkeyMcMac/ts3d/archive/#{@@download_commit}.zip"
   url @@download_url
-  version "1.3.14"
   sha256 "e96ed7acad951c6553a1a925452be13e076897561fdeca19417a13c878384fe7"
 
   depends_on "ncurses"
