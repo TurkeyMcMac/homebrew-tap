@@ -24,6 +24,7 @@ class Ts3d < Formula
       SH
     end
     system 'chmod', '+x', exe
+    puts "NOTE: Game files are present in #{ts3d_root}"
   end
 
   def test
