@@ -15,18 +15,19 @@ class Ts3d < Formula
 
   def install
     exe = bin/"ts3d"
-    exe_real = bin/"ts3d-no-root"
-    ts3d_root = prefix/"ts3d-root"
-    system 'mkdir', '-p', bin, man6, ts3d_root
+    exe_real = bin/"ts3d-no-data"
+    ts3d_data = prefix/"game-data"
+    system 'mkdir', '-p', bin, man6, ts3d_data
     system 'make', 'CFLAGS=-O2'
-    system 'sh', '-c', '--', 'yes | make install exe=ts3d-no-root exe-dir="$0" man-dir="$1" TS3D_ROOT="$2"', bin, man6, ts3d_root
+    system 'sh', '-c', '--', 'yes | make install exe=ts3d-no-data exe-dir="$0" man-dir="$1" TS3D_DATA="$2"', bin, man6, ts3d_data
     exe.write <<~SH
       #!/bin/bash
-      [ -z "${TS3D_ROOT+x}" ] && export TS3D_ROOT="#{ts3d_root}"
+      [ -z "${TS3D_DATA+x}" ] && export TS3D_DATA="#{ts3d_data}"
       exec -a "$(basename "$0")" #{exe_real} "$@"
     SH
     system 'chmod', '+x', exe
-    puts "NOTE: Game files are present in #{ts3d_root}"
+    puts "NOTE: Game data is present in #{ts3d_data}"
+    puts "NOTE: A directory .ts3d will be placed in your home directory"
   end
 
   test do
