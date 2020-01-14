@@ -10,8 +10,10 @@ class CTestFunctions < Formula
     system 'make'
     bin.install 'ceeteef'
     include.install 'lib/libctf.h'
-    puts 'NOTE: The executable is called "ceeteef"'
-    puts 'NOTE: Include the header like: #include <libctf.h>'
+  end
+
+  def caveats;
+    'The executable is called "ceeteeef", and the header is "libctf.h"'
   end
 
   test do

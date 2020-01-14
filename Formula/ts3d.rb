@@ -26,8 +26,10 @@ class Ts3d < Formula
       exec -a "$(basename "$0")" #{exe_real} "$@"
     SH
     system 'chmod', '+x', exe
-    puts "NOTE: Game data is present in #{ts3d_data}"
-    puts "NOTE: A directory .ts3d will be placed in your home directory"
+  end
+
+  def caveats
+    "Game data is present in #{prefix}/game-data"
   end
 
   test do
