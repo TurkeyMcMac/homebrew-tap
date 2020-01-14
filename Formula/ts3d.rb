@@ -29,7 +29,10 @@ class Ts3d < Formula
   end
 
   def caveats
-    "Game data is present in #{prefix}/game-data"
+    <<~EOT
+      Unlike with manually installed ts3d, the default game data location is #{prefix}/game-data rather than ~/.ts3d/data.
+      This can still be overriden as always by setting $TS3D_DATA or using the -d option.
+    EOT
   end
 
   test do
