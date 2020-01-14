@@ -19,7 +19,7 @@ class Ts3d < Formula
     mkdir_p man6
     mkdir_p ts3d_data
     system "make", "CFLAGS=-O2"
-    system "sh", "-c", "--", 'yes | make install exe=ts3d-no-data exe-dir="$0" man-dir="$1" TS3D_DATA="$2"', bin, man6, ts3d_data
+    system "sh", "-c", 'yes | make install exe=ts3d-no-data exe-dir="$0" man-dir="$1" TS3D_DATA="$2"', bin, man6, ts3d_data
     exe.write <<~SH
       #!/bin/bash
       [ -z "${TS3D_DATA+x}" ] && export TS3D_DATA="#{ts3d_data}"
