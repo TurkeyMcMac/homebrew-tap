@@ -1,15 +1,19 @@
 class Intergrid < Formula
-  desc "An ecological simulator/screensaver"
+  DOWNLOAD_COMMIT = "1408b2e89dcbb55d2da6f860e67af25b82476560".freeze
+  desc "Ecological simulator/screensaver"
+  homepage "https://github.com/TurkeyMcMac/intergrid/tree/#{DOWNLOAD_COMMIT}"
+  url "https://github.com/TurkeyMcMac/intergrid/archive/#{DOWNLOAD_COMMIT}.tar.gz"
   version "0.3.3"
-  @@download_commit = '1408b2e89dcbb55d2da6f860e67af25b82476560'
-  homepage "https://github.com/TurkeyMcMac/intergrid/tree/#{@@download_commit}"
-  url "https://github.com/TurkeyMcMac/intergrid/archive/#{@@download_commit}.zip"
-  sha256 "cd765fe375555534a15410aea7f1fad6e97c74af30fc37ec214a77dc9c44db8e"
+  sha256 "8d6cfb35597998f86449f7a2d78669f0b20a4b5a3665b3d2b5e0cb5d3760d023"
 
   depends_on "sdl2"
 
   def install
-    system 'make', 'CXXFLAGS=-O3 -flto'
-    bin.install 'intergrid'
+    system "make", "CXXFLAGS=-O3 -flto"
+    bin.install "intergrid"
+  end
+
+  test do
+    system "intergrid", "-no-draw", "-print-stats", "-tick-limit", "100", "-frame-delay", "0"
   end
 end

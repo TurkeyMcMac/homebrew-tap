@@ -1,31 +1,31 @@
 class Ts3d < Formula
+  DOWNLOAD_COMMIT = "d748de7befacedcd6d094839303310ffd34a8bb3".freeze
+  DOWNLOAD_URL = "https://github.com/TurkeyMcMac/ts3d/archive/#{DOWNLOAD_COMMIT}.tar.gz".freeze
   desc "Terminal-based first-person shooter"
+  homepage "https://github.com/TurkeyMcMac/ts3d/tree/#{DOWNLOAD_COMMIT}"
+  url DOWNLOAD_URL
   version "1.3.14"
-  @@download_commit = "d748de7befacedcd6d094839303310ffd34a8bb3"
-  homepage "https://github.com/TurkeyMcMac/ts3d/tree/#{@@download_commit}"
-  @@download_url = "https://github.com/TurkeyMcMac/ts3d/archive/#{@@download_commit}.zip"
-  url @@download_url
-  sha256 "e96ed7acad951c6553a1a925452be13e076897561fdeca19417a13c878384fe7"
+  sha256 "7fddf847d4c840c6b2155148b43fa560c19ceaf99bb1323c39db75ba52dbb9b0"
 
-  depends_on "ncurses"
   depends_on "turkeymcmac/tap/c-test-functions" => :test
   depends_on "wget" => :test
-  # Hopefully included by default:
-  # depends_on "zip" => :test
+  depends_on "ncurses"
 
   def install
     exe = bin/"ts3d"
     exe_real = bin/"ts3d-no-data"
     ts3d_data = prefix/"game-data"
-    system 'mkdir', '-p', bin, man6, ts3d_data
-    system 'make', 'CFLAGS=-O2'
-    system 'sh', '-c', '--', 'yes | make install exe=ts3d-no-data exe-dir="$0" man-dir="$1" TS3D_DATA="$2"', bin, man6, ts3d_data
+    mkdir_p bin
+    mkdir_p man6
+    mkdir_p ts3d_data
+    system "make", "CFLAGS=-O2"
+    system "sh", "-c", "--", 'yes | make install exe=ts3d-no-data exe-dir="$0" man-dir="$1" TS3D_DATA="$2"', bin, man6, ts3d_data
     exe.write <<~SH
       #!/bin/bash
       [ -z "${TS3D_DATA+x}" ] && export TS3D_DATA="#{ts3d_data}"
       exec -a "$(basename "$0")" #{exe_real} "$@"
     SH
-    system 'chmod', '+x', exe
+    chmod "+x", exe
   end
 
   def caveats
@@ -33,8 +33,8 @@ class Ts3d < Formula
   end
 
   test do
-    system 'wget', @@download_url
-    system 'unzip', "#{@@download_commit}.zip"
-    system 'make', '-C', "ts3d-#{@@download_commit}", 'run-tests'
+    system "wget", DOWNLOAD_URL
+    system "tar", "-xzvf", "#{DOWNLOAD_COMMIT}.tar.gz"
+    system "make", "-C", "ts3d-#{DOWNLOAD_COMMIT}", "run-tests"
   end
 end

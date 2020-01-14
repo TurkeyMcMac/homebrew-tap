@@ -1,18 +1,18 @@
 class CTestFunctions < Formula
-  desc "A simple unit testing framework for C"
+  DOWNLOAD_COMMIT = "83a24faaf43f23094b7891c2806f42250b8fe083".freeze
+  desc "Simple unit testing framework for C"
+  homepage "https://github.com/TurkeyMcMac/c-test-functions/tree/#{DOWNLOAD_COMMIT}"
+  url "https://github.com/TurkeyMcMac/c-test-functions/archive/#{DOWNLOAD_COMMIT}.tar.gz"
   version "0.6.15"
-  @@download_commit = '83a24faaf43f23094b7891c2806f42250b8fe083'
-  homepage "https://github.com/TurkeyMcMac/c-test-functions/tree/#{@@download_commit}"
-  url "https://github.com/TurkeyMcMac/c-test-functions/archive/#{@@download_commit}.zip"
-  sha256 "a2ce0a4179bdc0c30867aa613b2d564381abf6bd1c41686dc068712eead15527"
+  sha256 "2b49224dd1a77ef1bd3b5e5abca673782baa46c360b160d51d824ab6d48bd3fc"
 
   def install
-    system 'make'
-    bin.install 'ceeteef'
-    include.install 'lib/libctf.h'
+    system "make"
+    bin.install "ceeteef"
+    include.install "lib/libctf.h"
   end
 
-  def caveats;
+  def caveats
     'The executable is called "ceeteeef", and the header is "libctf.h"'
   end
 
@@ -39,13 +39,13 @@ class CTestFunctions < Formula
         fputs("stderr\\n", stderr);
       )
     C
-    system ENV.cc, '-std=c99', '-shared', '-DCTF_TESTS_ENABLED', '-o', test, test_c
+    system ENV.cc, "-std=c99", "-shared", "-DCTF_TESTS_ENABLED", "-o", test, test_c
     output = `ceeteef #{test}`
-    assert output.include? 'succeed SUCCEEDED'
-    assert output.include? 'succeed_return_0 SUCCEEDED'
-    assert output.include? 'fail_assert FAILED'
-    assert output.include? 'fail_return_1 FAILED'
-    assert output.include? 'print:stdout'
-    assert output.include? 'print:stderr'
+    assert_match /^succeed SUCCEEDED$/, output
+    assert_match /^succeed_return_0 SUCCEEDED$/, output
+    assert_match /^fail_assert FAILED/, output
+    assert_match /^fail_return_1 FAILED/, output
+    assert_match /^print:stdout$/, output
+    assert_match /^print:stderr$/, output
   end
 end
