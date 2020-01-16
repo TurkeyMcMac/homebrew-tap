@@ -1,14 +1,15 @@
 class Piks < Formula
-  DOWNLOAD_COMMIT = "3011f84f88c3084ec862bdb9203ce079dd0322d6".freeze
+  DOWNLOAD_COMMIT = "7406752d2b0d0731e58092f12a7c65398e165aef".freeze
   desc "Evolution simulator similar to Conway's Game of Life"
   homepage "https://github.com/TurkeyMcMac/piks/tree/#{DOWNLOAD_COMMIT}"
   url "https://github.com/TurkeyMcMac/piks/archive/#{DOWNLOAD_COMMIT}.tar.gz"
-  version "0.5.5"
-  sha256 "99f838f7aec57fbf75b3cc4434a8f1a4c05e86d08d32b4c295f7e200cbb1d363"
+  version "0.5.6"
+  sha256 "149c1266e96b6f72ccb8006db740adeba7ceed320e1706b82f5c15bfdd89d4b2"
 
   def install
     system "make", "CFLAGS=-O3 -flto"
     bin.install "piks"
+    man6.install "piks.6"
   end
 
   test do
