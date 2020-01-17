@@ -1,8 +1,7 @@
 class Intergrid < Formula
-  DOWNLOAD_COMMIT = "1408b2e89dcbb55d2da6f860e67af25b82476560".freeze
   desc "Ecological simulator/screensaver"
-  homepage "https://github.com/TurkeyMcMac/intergrid/tree/#{DOWNLOAD_COMMIT}"
-  url "https://github.com/TurkeyMcMac/intergrid/archive/#{DOWNLOAD_COMMIT}.tar.gz"
+  homepage "https://github.com/TurkeyMcMac/intergrid"
+  url "https://github.com/TurkeyMcMac/intergrid/archive/1408b2e89dcbb55d2da6f860e67af25b82476560.tar.gz"
   version "0.3.3"
   sha256 "8d6cfb35597998f86449f7a2d78669f0b20a4b5a3665b3d2b5e0cb5d3760d023"
 

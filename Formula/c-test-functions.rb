@@ -1,8 +1,7 @@
 class CTestFunctions < Formula
-  DOWNLOAD_COMMIT = "83a24faaf43f23094b7891c2806f42250b8fe083".freeze
   desc "Simple unit testing framework for C"
-  homepage "https://github.com/TurkeyMcMac/c-test-functions/tree/#{DOWNLOAD_COMMIT}"
-  url "https://github.com/TurkeyMcMac/c-test-functions/archive/#{DOWNLOAD_COMMIT}.tar.gz"
+  homepage "https://github.com/TurkeyMcMac/c-test-functions"
+  url "https://github.com/TurkeyMcMac/c-test-functions/archive/83a24faaf43f23094b7891c2806f42250b8fe083.tar.gz"
   version "0.6.15"
   sha256 "2b49224dd1a77ef1bd3b5e5abca673782baa46c360b160d51d824ab6d48bd3fc"
 
