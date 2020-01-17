@@ -1,11 +1,11 @@
 class Ts3d < Formula
-  DOWNLOAD_COMMIT = "5661def7682362d4a0436848ef8740bf06945df3".freeze
+  DOWNLOAD_COMMIT = "c0881d0f75c0e8b060cc7d949fa59152c97e5b70".freeze
   DOWNLOAD_URL = "https://github.com/TurkeyMcMac/ts3d/archive/#{DOWNLOAD_COMMIT}.tar.gz".freeze
   desc "Terminal-based first-person shooter"
   homepage "https://github.com/TurkeyMcMac/ts3d/tree/#{DOWNLOAD_COMMIT}"
   url DOWNLOAD_URL
-  version "1.3.18"
-  sha256 "76909a7dbdba381ba85865c676ff05de7f3e97dac046109e43063549cbc7c2fa"
+  version "1.3.19"
+  sha256 "d8f11bafa6d355d3eac5b606b644261ec5b5462fb49fbbe8451065a97e43fba1"
 
   depends_on "turkeymcmac/tap/c-test-functions" => :test
   depends_on "ncurses"
