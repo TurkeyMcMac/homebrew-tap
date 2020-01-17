@@ -10,4 +10,5 @@ You should be able to install things from here with:
 brew install turkeymcmac/tap/<formula>
 ```
 
-`<formula>` could be `ts3d` or `c-test-functions`, for example.
+`<formula>` could be `ts3d` or `c-test-functions`, for example. For a full list
+of formula, look in the directory Formula.
