@@ -8,7 +8,6 @@ class Ts3d < Formula
   sha256 "76909a7dbdba381ba85865c676ff05de7f3e97dac046109e43063549cbc7c2fa"
 
   depends_on "turkeymcmac/tap/c-test-functions" => :test
-  depends_on "wget" => :test
   depends_on "ncurses"
 
   def install
@@ -39,7 +38,7 @@ class Ts3d < Formula
     # Make sure the executable runs:
     system "ts3d", "-v"
     # Run unit tests:
-    system "wget", DOWNLOAD_URL
+    system "curl", "-LO", DOWNLOAD_URL
     system "tar", "-xzvf", "#{DOWNLOAD_COMMIT}.tar.gz"
     system "make", "-C", "ts3d-#{DOWNLOAD_COMMIT}", "run-tests"
   end
