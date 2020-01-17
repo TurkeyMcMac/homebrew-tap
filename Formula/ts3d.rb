@@ -36,6 +36,9 @@ class Ts3d < Formula
   end
 
   test do
+    # Make sure the executable runs:
+    system "ts3d", "-v"
+    # Run unit tests:
     system "wget", DOWNLOAD_URL
     system "tar", "-xzvf", "#{DOWNLOAD_COMMIT}.tar.gz"
     system "make", "-C", "ts3d-#{DOWNLOAD_COMMIT}", "run-tests"
