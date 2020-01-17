@@ -15,5 +15,7 @@ class Piks < Formula
 
   test do
     system "piks", "-otest.piks", "-W1000", "-H1000", "-p1000", "-g", "-S5"
+    system "piks", "-itest.piks", "-g", "-S5"
+    system "piks", "-itest.piks", "-g", "-S5"
   end
 end
