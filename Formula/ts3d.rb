@@ -31,6 +31,7 @@ class Ts3d < Formula
     <<~EOT
       Unlike with manually installed ts3d, the default game data location is #{prefix}/game-data rather than ~/.ts3d/data.
       This can still be overriden as always by setting $TS3D_DATA or using the -d option.
+      Alternatively, another executable 'ts3d-no-data' is provided without this override.
     EOT
   end
 
