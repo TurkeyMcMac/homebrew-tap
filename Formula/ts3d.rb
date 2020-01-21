@@ -8,7 +8,6 @@ class Ts3d < Formula
   sha256 "3a85aed57c02eb37be5b0d5362ba9c4fd1ff28bf12333dbad1023c2782b901cd"
 
   depends_on "turkeymcmac/tap/c-test-functions" => :test
-  depends_on "ncurses"
 
   def install
     exe = bin/"ts3d"

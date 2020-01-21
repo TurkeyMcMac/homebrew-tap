@@ -5,8 +5,6 @@ class Piks < Formula
   version "0.6.1"
   sha256 "54f0c5750d4f4663d97617e7af01d4eabbc79600f91762497013db29406aedc5"
 
-  depends_on "ncurses"
-
   def install
     system "make", "CFLAGS=-O3 -flto"
     bin.install "piks"
