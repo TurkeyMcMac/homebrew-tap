@@ -1,9 +1,9 @@
 class CTestFunctions < Formula
   desc "Simple unit testing framework for C"
   homepage "https://github.com/TurkeyMcMac/c-test-functions"
-  url "https://github.com/TurkeyMcMac/c-test-functions/archive/4a272f874d3573475be5c1be47b09b6fce18b0a2.tar.gz"
-  version "0.8.3"
-  sha256 "b040228fe0c5b87d09a45d6ebd62085189caf3edda0d62de859ffc0c660616e6"
+  url "https://github.com/TurkeyMcMac/c-test-functions/archive/034917842231094d82bacc8deac9f3b9e2e9c2f7.tar.gz"
+  version "0.8.5"
+  sha256 "1bbbe42da0633b4f8183e64034d2a27192bab7b8ca98eab2ca4ef82c85dc26b6"
 
   def install
     system "make"
