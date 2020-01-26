@@ -39,7 +39,7 @@ class CTestFunctions < Formula
       )
     C
     system ENV.cc, "-std=c99", "-shared", "-DCTF_TESTS_ENABLED", "-o", test, test_c
-    output = `ceeteef #{test}`
+    output = shell_output "ceeteef #{test}"
     assert_match /^succeed SUCCEEDED$/, output
     assert_match /^succeed_return_0 SUCCEEDED$/, output
     assert_match /^fail_assert FAILED/, output
