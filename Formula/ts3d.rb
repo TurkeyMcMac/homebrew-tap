@@ -1,10 +1,10 @@
 class Ts3d < Formula
-  VERSION = "1.4.7".freeze
+  VERSION = "1.5.0".freeze
   DOWNLOAD_URL = "https://github.com/TurkeyMcMac/ts3d/archive/v#{VERSION}.tar.gz".freeze
   desc "Terminal-based first-person shooter"
   homepage "https://github.com/TurkeyMcMac/ts3d"
   url DOWNLOAD_URL
-  sha256 "5804afd2c4dfe014e855e9b7226585ee80b7d9424622cea5007eaf447800bab9"
+  sha256 "75d7279a6a4a5d2ce97e7767d42c4dbdf7ccd558539c13b695ff6c4753247d07"
 
   depends_on "turkeymcmac/tap/c-test-functions" => :test
 
