@@ -4,7 +4,7 @@ class Ts3d < Formula
   desc "Terminal-based first-person shooter"
   homepage "https://github.com/TurkeyMcMac/ts3d"
   url DOWNLOAD_URL
-  sha256 "395408a3dc9c3db2b5c200b8722a13a60898c861633b99e6e250186adffd1370"
+  sha256 "5804afd2c4dfe014e855e9b7226585ee80b7d9424622cea5007eaf447800bab9"
 
   depends_on "turkeymcmac/tap/c-test-functions" => :test
 
