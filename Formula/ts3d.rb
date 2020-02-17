@@ -11,7 +11,7 @@ class Ts3d < Formula
   def install
     exe = bin/"ts3d"
     exe_real = bin/"ts3d-no-data"
-    ts3d_data = prefix/"game-data"
+    ts3d_data = share
     mkdir_p bin
     mkdir_p man6
     mkdir_p ts3d_data
@@ -27,7 +27,7 @@ class Ts3d < Formula
 
   def caveats
     <<~EOT
-      Unlike with manually installed ts3d, the default game data location is #{prefix}/game-data rather than ~/.ts3d/data.
+      Unlike with manually installed ts3d, the default game data location is #{share} rather than ~/.ts3d/data.
       This can still be overriden as always by setting $TS3D_DATA or using the -d option.
       Alternatively, another executable 'ts3d-no-data' is provided without this override.
     EOT
