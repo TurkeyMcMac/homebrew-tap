@@ -35,7 +35,7 @@ class Ts3d < Formula
 
   test do
     # Make sure the executable runs:
-    system "ts3d", "-v"
+    assert_match VERSION, (shell_output "ts3d -v")
     # Run unit tests:
     system "curl", "-LO", DOWNLOAD_URL
     system "tar", "-xzvf", "v#{VERSION}.tar.gz"
