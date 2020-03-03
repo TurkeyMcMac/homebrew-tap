@@ -1,9 +1,9 @@
 class Piks < Formula
   desc "Evolution simulator similar to Conway's Game of Life"
   homepage "https://github.com/TurkeyMcMac/piks"
-  url "https://github.com/TurkeyMcMac/piks/archive/6186ac1fde32087ec5c83ff4fb1395d8e0c2b457.tar.gz"
-  version "0.6.3"
-  sha256 "88f31c7ea9dc63f4559a17258c8651e069fc0e8e02d3e3a81d444355f23c917b"
+  url "https://github.com/TurkeyMcMac/piks/archive/2cb85cd3e03ab199c75a7008a0efa53619b54b57.tar.gz"
+  version "0.6.4"
+  sha256 "a2a3a51a327fc5986dc6e6b200ec0d09b8aae2c42848a80f12db7701ebccb2e4"
 
   def install
     system "make", "CFLAGS=-O3 -flto"
