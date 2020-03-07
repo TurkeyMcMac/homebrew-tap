@@ -1,9 +1,9 @@
 class Intergrid < Formula
   desc "Ecological simulator/screensaver"
   homepage "https://github.com/TurkeyMcMac/intergrid"
-  url "https://github.com/TurkeyMcMac/intergrid/archive/09761c2c7dd39871c8e7e5357099f2224b6bb099.tar.gz"
-  version "0.3.4"
-  sha256 "bb2e994bc67c2bb298cee3bed526d2b1eba6df4e0fddee71ab0afcd834f1f97a"
+  url "https://github.com/TurkeyMcMac/intergrid/archive/31ba0b3a1f7a96d3e3c2d6b9aa79662811917870.tar.gz"
+  version "0.3.5"
+  sha256 "cef3926635bc9c980f9e28652d70072d02c4d85ae211853f75a6565c77499707"
 
   depends_on "sdl2"
 
