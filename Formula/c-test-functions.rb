@@ -9,6 +9,8 @@ class CTestFunctions < Formula
     system "make"
     bin.install "ceeteef"
     include.install "lib/libctf.h"
+    man1.install "ceeteef.1"
+    man3.install "ctf.3"
   end
 
   def caveats
