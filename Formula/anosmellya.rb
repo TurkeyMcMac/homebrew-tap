@@ -1,4 +1,4 @@
-class Intergrid < Formula
+class Anosmellya < Formula
   desc "Smell-based simulator of evolution through sexual reproduction"
   homepage "https://github.com/TurkeyMcMac/anosmellya"
   url "https://github.com/TurkeyMcMac/anosmellya/archive/ddf741cfa6f1a2a3e7748ab5c1f4924599ec9917.tar.gz"
