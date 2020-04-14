@@ -3,7 +3,7 @@ class Anosmellya < Formula
   homepage "https://github.com/TurkeyMcMac/anosmellya"
   url "https://github.com/TurkeyMcMac/anosmellya/archive/ddf741cfa6f1a2a3e7748ab5c1f4924599ec9917.tar.gz"
   version "0.4.1"
-  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  sha256 "2ee97ceec84569183df27c7ef6a59ccecf3a9492f7bc8054bca786cd159ddd0d"
 
   depends_on "sdl2"
 
