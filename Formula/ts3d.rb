@@ -1,5 +1,5 @@
 class Ts3d < Formula
-  VERSION = "1.7.19".freeze
+  VERSION = "1.7.22".freeze
   DOWNLOAD_URL = "https://github.com/TurkeyMcMac/ts3d/archive/v#{VERSION}.tar.gz".freeze
   desc "Terminal-based first-person shooter"
   homepage "https://github.com/TurkeyMcMac/ts3d"
