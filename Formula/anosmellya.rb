@@ -1,9 +1,9 @@
 class Anosmellya < Formula
   desc "Smell-based simulator of evolution through sexual reproduction"
   homepage "https://github.com/TurkeyMcMac/anosmellya"
-  url "https://github.com/TurkeyMcMac/anosmellya/archive/971ee18680f2da087b52e31d94c284f4308c8a5c.tar.gz"
-  version "0.7.1"
-  sha256 "018830e0269b7f62e61e67084c50a2619f7a62d5f4b388e61cfa2decee3fe6e6"
+  url "https://github.com/TurkeyMcMac/anosmellya/archive/a77a49fd6df701ed82a4457ea8dd9799491039ba.tar.gz"
+  version "0.8.0"
+  sha256 "be47f4323cdbc1c54102e76e9b115056925fc50cf1c2d20edc30bfeb41a48a83"
 
   depends_on "sdl2"
 
