@@ -1,12 +1,9 @@
 class Ts3d < Formula
   VERSION = "1.9.10".freeze
-  DOWNLOAD_URL = "https://github.com/TurkeyMcMac/ts3d/archive/v#{VERSION}.tar.gz".freeze
   desc "Terminal-based first-person shooter"
   homepage "https://github.com/TurkeyMcMac/ts3d"
-  url DOWNLOAD_URL
+  url "https://github.com/TurkeyMcMac/ts3d/archive/v#{VERSION}.tar.gz"
   sha256 "d61ae410816d190db4948583a769e98bc2d77d0a289a782a4e4ebb04338b6315"
-
-  depends_on "turkeymcmac/tap/c-test-functions" => :test
 
   def install
     exe = bin/"ts3d"
@@ -34,11 +31,7 @@ class Ts3d < Formula
   end
 
   test do
-    # Make sure the executable runs:
+    # Make sure the right executable runs:
     assert_match VERSION, (shell_output "ts3d -v")
-    # Run unit tests:
-    system "curl", "-LO", DOWNLOAD_URL
-    system "tar", "-xzvf", "v#{VERSION}.tar.gz"
-    system "make", "-C", "ts3d-#{VERSION}", "run-tests"
   end
 end
