@@ -1,10 +1,10 @@
 class Ts3d < Formula
-  VERSION = "1.11.12".freeze
+  VERSION = "1.13.1".freeze
   desc "Terminal-based first-person shooter"
   homepage "https://github.com/TurkeyMcMac/ts3d"
   url "https://github.com/TurkeyMcMac/ts3d/archive/v#{VERSION}.tar.gz"
   version VERSION
-  sha256 "c34f6b7cf955a774573968a62060e1743f5264b7af92341b1e0f3fe970711794"
+  sha256 "2ef803e8ecfdf889d3b7ffb4d8bf001132ae6394d74e62ab7e9ba2f06be5a13a"
 
   def install
     exe = bin/"ts3d"
