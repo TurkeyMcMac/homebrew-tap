@@ -14,6 +14,6 @@ class Tmv2 < Formula
   end
 
   test do
-    shell_output "printf '\\na\\n\\n a\\n\\n  a' | tmv2"
+    shell_output "printf '\\na\\n\\n a\\n\\n  a' | TERM=xterm tmv2"
   end
 end
