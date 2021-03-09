@@ -1,10 +1,10 @@
 class Mmmaze < Formula
-  VERSION = "0.5.6".freeze
+  VERSION = "0.5.8".freeze
   desc "Game about collecting money in a maze and escaping from monsters"
   homepage "https://github.com/TurkeyMcMac/mmmaze"
   url "https://github.com/TurkeyMcMac/mmmaze/archive/v#{VERSION}.tar.gz"
   version VERSION
-  sha256 "7e3b862fbd0e831dc95b58162b35848fd7d17d6e04d1c110c9c64d60765d5b00"
+  sha256 "62614546306618173c0cc471c590e356a43ce34ae5209557712450777f394f75"
 
   def install
     system "make"
