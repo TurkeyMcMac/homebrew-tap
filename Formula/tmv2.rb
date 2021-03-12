@@ -1,9 +1,9 @@
 class Tmv2 < Formula
   desc "Player for ASCII art animations that renders to the terminal"
   homepage "https://github.com/TurkeyMcMac/tmv2"
-  url "https://github.com/TurkeyMcMac/tmv2/archive/214db3deed366d67bcd2dd506741214aba503692.tar.gz"
-  version "0.1.5"
-  sha256 "c96f70f383e69057d37a1b75279006433a9aeb9cfd430a4be980a41c043facf3"
+  url "https://github.com/TurkeyMcMac/tmv2/archive/535dbfc6627bde318ac37843861caa626daa1a2b.tar.gz"
+  version "0.1.7"
+  sha256 "2319ad92345a69cf6ad8bf8ff9698ffceded88e3362309ac770938a0cd34323a"
 
   def install
     system "make", "OPTIMIZATION=-O3"
